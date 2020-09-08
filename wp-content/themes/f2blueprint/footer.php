@@ -23,20 +23,32 @@
               <h3 class="headline headline--small">Explore</h3>
               <nav class="nav-list">
 
-                    <?php 
+                    <!-- <?php 
                         wp_nav_menu(array(
                             'theme_location' => 'footerLinksOne'
                         ));
-                    ?>
+                    ?> -->
 
-                <!-- 
-                    <ul>
-                  <li><a href="<?php echo site_url('/about-us'); ?>">About Us</a></li>
-                  <li><a href="#">Programs</a></li>
-                  <li><a href="#">Events</a></li>
-                  <li><a href="#">Campuses</a></li>
+                
+                <ul>
+                <li <?php 
+              if (is_page('about-us') or wp_get_post_parent_id(0) == 12) { 
+              echo 'class="current-menu-item"'; }?>>
+              <a href="<?php echo site_url('/about-us'); ?>">About Us</a></li>
+
+               <li <?php if (get_post_type() == 'member') echo 'class="current-menu-item"' ?> ><a href="<?php echo get_post_type_archive_link('member'); ?>">Our Members</a></li>
+
+               <li <?php if (get_post_type() == 'event' OR is_page('past-events')) echo 'class="current-menu-item"' ?>><a href="<?php echo get_post_type_archive_link('event'); ?>">Events</a></li>
+
+              <li <?php 
+              if (get_post_type() == 'post') echo 'class="current-menu-item"' ?>>
+              <a href="<?php echo site_url('/blog'); ?>">Blog</a></li>
+
+               <li <?php 
+              if (is_page('contact') or wp_get_post_parent_id(0) == 108) echo 'class="current-menu-item"' ?>>
+              <a href="<?php echo site_url('/contact'); ?>">Contact</a></li>
                 </ul>
-                -->
+               
               </nav>
             </div>
 
@@ -65,9 +77,9 @@
             <nav>
               <ul class="min-list social-icons-list group">
                 <li>
-                  <a href="#" class="social-color-facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                  <a href="https://www.facebook.com/Aurora-Agency-141107776579616/" class="social-color-facebook"><i class="fa fa-facebook" aria-hidden="true" target="_blank"></i></a>
                 </li>
-                <li>
+                <!-- <li>
                   <a href="#" class="social-color-twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                 </li>
                 <li>
@@ -78,7 +90,7 @@
                 </li>
                 <li>
                   <a href="#" class="social-color-instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                </li>
+                </li> -->
               </ul>
             </nav>
           </div>
