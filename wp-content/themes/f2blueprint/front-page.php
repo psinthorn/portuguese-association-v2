@@ -85,29 +85,30 @@
     <div class="hero-slider">
       <div data-glide-el="track" class="glide__track">
         <div class="glide__slides">
-          <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/city-of-angle.png'); ?>">
+          <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/portugal-slide-03.png'); ?>">
             <div class="hero-slider__interior container">
               <div class="hero-slider__overlay">
                 <h2 class="headline headline--medium t-center">GASTRONOMY OF PORTUGAL</h2>
-                <p class="t-center">why most of the travellers choose Portugal as a destination.</p>
+                <p class="t-center">World class culinary and award winning wine</p>
                 <p class="t-center no-margin"><a href="http://portugueseasso.local/gastronomy-of-portugal/" class="btn btn--blue">Learn more</a></p>
               </div>
             </div>
           </div>
-          <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/bus.jpg'); ?>">
+          <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/portugal-slide-02.png'); ?>">
             <div class="hero-slider__interior container">
               <div class="hero-slider__overlay">
                 <h2 class="headline headline--medium t-center">PORTUGAL FOR FAMILIES</h2>
-                <p class="t-center">It's family time we know how to take take care your children.</p>
+                <p class="t-center">The perfect destination for the entire family</p>
                 <p class="t-center no-margin"><a href="http://portugueseasso.local/slides/portugal-for-families/" class="btn btn--blue">Learn more</a></p>
               </div>
             </div>
           </div>
-          <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/portuguese-lane-01.png'); ?>">
+          <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/portugal-slide-01.png'); ?>">
             <div class="hero-slider__interior container">
               <div class="hero-slider__overlay">
                 <h2 class="headline headline--medium t-center">PORTUGAL HIGHLIGHTS</h2>
-                <p class="t-center">Looking for Portugal HIGHLIGHTS?</p>
+                <p class="t-center">Wellness trips, shopping tours or honeymooners, we will definitely find the perfect tour for
+you. </p>
                 <p class="t-center no-margin"><a href="http://portugueseasso.local/slides/portugal-highlights/" class="btn btn--blue">Learn more</a></p>
               </div>
             </div>
