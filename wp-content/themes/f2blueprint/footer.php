@@ -4,8 +4,8 @@
       <div class="site-footer__inner container">
       <div class="group">
          <p class="text-center pb-5">
-          <a href="#">
-            <img src="<?php echo get_theme_file_uri('/images/logo.png'); ?>" alt="Portuguese Association" style="width: 11rem">
+          <a href="<?php echo site_url(); ?>">
+            <img src="<?php echo get_theme_file_uri('/images/logo-white.png'); ?>" alt="Portuguese Association" style="width: 11rem">
           </a>
            </p>
         </div>

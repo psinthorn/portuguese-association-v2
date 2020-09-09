@@ -42,7 +42,8 @@
   }
 
   &--blue:hover {
-    background: linear-gradient(color($mainBlue b(-16%)), $mainBlue);
+    /* background: linear-gradient(color($greyDark b(-16%)), $mainBlue); */
+    color: $greyDark;
   }
 
   &--yellow {
@@ -52,6 +53,7 @@
 
   &--yellow:hover {
     background: linear-gradient($mainYellow, color($mainYellow b(+40%) s(+80%)));
+    
   }
 
   &--beige {

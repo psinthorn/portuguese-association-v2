@@ -41,8 +41,8 @@
              wp_enqueue_script('primary-main-js', 'http://localhost:3000/bundled.js', NULL,'1.0', true );
         } else {
             wp_enqueue_script('our-vendors-js', get_theme_file_uri('/bundled-assets/vendors~scripts.8c97d901916ad616a264.js'), NULL, '1.0', true);
-            wp_enqueue_script('main-university-js', get_theme_file_uri('/bundled-assets/scripts.17900f7e9b3a86b999f2.js'), NULL, '1.0', true);
-            wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.17900f7e9b3a86b999f2.css'));
+            wp_enqueue_script('main-university-js', get_theme_file_uri('/bundled-assets/scripts.1be9f18d714c98fcf60d.js'), NULL, '1.0', true);
+            wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.1be9f18d714c98fcf60d.css'));
         }
         
     }
@@ -58,6 +58,7 @@
         add_image_size('teamworkLandscape', 400, 260, true);
         add_image_size('teamworkPortrait', 480, 650, true);
         add_image_size('pageBanner', 1500, 350, true);
+        add_image_size('spotlightSlide', 1500, 450, true);
     }
     add_action('after_setup_theme', 'f2_blueprint_features');
 

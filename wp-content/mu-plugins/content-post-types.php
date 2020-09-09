@@ -69,7 +69,25 @@
                 'singular_name' => 'member'
 
             ),
-            'menu_icon' => 'dashicons-welcome-learn-more'
+            'menu_icon' => 'dashicons-groups'
+        ));
+
+        // Spotlight post type
+        register_post_type('spotlight', array(
+            'show_in_rest' => true,
+            'supports' => array('title', 'editor','thumbnail'),
+            'rewrite' => array('slug' => 'spotlights'),
+            'has_archive' => true,
+            'public' => true,
+            'labels' => array(
+                'name' => 'Spotlights',
+                'add_new_item' => 'Add New Spotlight',
+                'edit_item' => 'Edit Spotlight',
+                'all_items' => 'All Spotlights',
+                'singular_name' => 'spotlight'
+
+            ),
+            'menu_icon' => 'dashicons-megaphone'
         ));
     }
 
