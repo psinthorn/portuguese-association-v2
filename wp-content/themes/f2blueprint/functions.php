@@ -37,7 +37,7 @@
         wp_enqueue_style('bootsrap', '//stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
         //wp_enqueue_style('primary_main_files', get_stylesheet_uri());
 
-        if (strstr($_SERVER['SERVER_NAME'], 'portugueseasso.locall')) {
+        if (strstr($_SERVER['SERVER_NAME'], 'portugueseasso.local')) {
              wp_enqueue_script('primary-main-js', 'http://localhost:3000/bundled.js', NULL,'1.0', true );
         } else {
             wp_enqueue_script('our-vendors-js', get_theme_file_uri('/bundled-assets/vendors~scripts.8c97d901916ad616a264.js'), NULL, '1.0', true);
