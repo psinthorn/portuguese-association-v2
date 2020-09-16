@@ -63,7 +63,7 @@
             <a href="<?php echo wp_registration_url() ?>" class="btn btn--small btn--dark-orange float-left">Sign Up</a>
             <?php } ?>
            
-            <span class="search-trigger js-search-trigger"><i class="fa fa-search" aria-hidden="true"></i></span>
+            <!-- <span class="search-trigger js-search-trigger"><i class="fa fa-search" aria-hidden="true"></i></span> -->
           </div>
         </div>
       </div>
