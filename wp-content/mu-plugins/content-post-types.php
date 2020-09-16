@@ -74,6 +74,25 @@
             'menu_icon' => 'dashicons-groups'
         ));
 
+        // Partner post type
+        register_post_type('partner', array(
+            'show_in_rest' => true,
+            'supports' => array('title', 'editor','thumbnail'),
+            'rewrite' => array('slug' => 'partners'),
+            'has_archive' => true,
+            'public' => true,
+            'labels' => array(
+                'name' => 'Partners',
+                'add_new_item' => 'Add New Partner',
+                'edit_item' => 'Edit Partner',
+                'all_items' => 'All Partners',
+                'singular_name' => 'Partner'
+
+            ),
+            'menu_icon' => 'dashicons-groups'
+        ));
+
+
         // Things To Do post type
         register_post_type('thingtodo', array(
             'show_in_rest' => true,
