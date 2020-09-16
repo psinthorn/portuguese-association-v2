@@ -84,8 +84,8 @@
              wp_enqueue_script('primary-main-js', 'http://localhost:3000/bundled.js', NULL,'1.0', true );
         } else {
             wp_enqueue_script('our-vendors-js', get_theme_file_uri('/bundled-assets/vendors~scripts.8c97d901916ad616a264.js'), NULL, '1.0', true);
-            wp_enqueue_script('main-university-js', get_theme_file_uri('/bundled-assets/scripts.d4711097e3cf67ed360a.js'), NULL, '1.0', true);
-            wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.d4711097e3cf67ed360a.css'));
+            wp_enqueue_script('main-university-js', get_theme_file_uri('/bundled-assets/scripts.c7474e52cfd67d7262f7.js'), NULL, '1.0', true);
+            wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.c7474e52cfd67d7262f7.css'));
         }
         
     }
@@ -171,7 +171,7 @@
     add_action('login_enqueue_scripts', 'loginCss');
     function loginCss() {
         wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
-         wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.d4711097e3cf67ed360a.css'));
+         wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.c7474e52cfd67d7262f7.css'));
     }
 
     //Customize login title instead of power by wordpress
