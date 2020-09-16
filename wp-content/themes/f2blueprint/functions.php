@@ -29,6 +29,49 @@
 
     <?php 
     }
+
+    function showPostListQuery($args = NULL ) {
+    
+    ?>
+        
+          <?php 
+
+            $today = date('Ymd');
+
+            if (!$args['posttype']) {
+                $args['posttype'] = 'blog';
+            }
+            
+            if (!$args['perpage']){
+                 $args['perpage'] = 2;
+            }
+           
+
+            $listTwoPostQuery = new WP_Query(array(
+                'posts_per_page' => $args['perpage'],
+                'post_type' => $args['posttype'],
+                'order' => 'ASC',
+            ));
+
+            while($listTwoPostQuery->have_posts()){
+                $listTwoPostQuery->the_post(); 
+                get_template_part('partials/content', 'posts-list');     
+            }
+           
+        ?>
+
+     
+          <p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link($args['posttype']); ?>" class="btn btn--blue">View All Members</a></p>
+
+        <?php             
+                wp_reset_postdata();
+        ?>
+      
+
+    
+<?php
+
+    }
     
     function f2_blueprint_files() {
         // wp_enqueue_script('primary-main-js', get_theme_file_uri('/js/scripts-bundled.js'), NULL,'1.0', true );
