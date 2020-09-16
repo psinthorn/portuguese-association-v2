@@ -21,6 +21,8 @@
 
         // Events post type
         register_post_type('event', array(
+            "capability_type" => 'event',
+            "map_meta_cap" => true,
             'show_in_rest' => true,
             'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
             'rewrite' => array('slug' => 'events'),
@@ -72,19 +74,19 @@
             'menu_icon' => 'dashicons-groups'
         ));
 
-        // Spotlight post type
-        register_post_type('spotlight', array(
+        // Things To Do post type
+        register_post_type('thingtodo', array(
             'show_in_rest' => true,
             'supports' => array('title', 'editor','thumbnail'),
-            'rewrite' => array('slug' => 'spotlights'),
+            'rewrite' => array('slug' => 'thingstodo'),
             'has_archive' => true,
             'public' => true,
             'labels' => array(
-                'name' => 'Spotlights',
-                'add_new_item' => 'Add New Spotlight',
-                'edit_item' => 'Edit Spotlight',
-                'all_items' => 'All Spotlights',
-                'singular_name' => 'spotlight'
+                'name' => 'Things To Do',
+                'add_new_item' => 'Add New Thing To Do',
+                'edit_item' => 'Edit Thing To Do',
+                'all_items' => 'All Things To Dos',
+                'singular_name' => 'thingstodo'
 
             ),
             'menu_icon' => 'dashicons-megaphone'

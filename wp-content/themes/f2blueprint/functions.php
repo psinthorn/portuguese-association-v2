@@ -41,8 +41,8 @@
              wp_enqueue_script('primary-main-js', 'http://localhost:3000/bundled.js', NULL,'1.0', true );
         } else {
             wp_enqueue_script('our-vendors-js', get_theme_file_uri('/bundled-assets/vendors~scripts.8c97d901916ad616a264.js'), NULL, '1.0', true);
-            wp_enqueue_script('main-university-js', get_theme_file_uri('/bundled-assets/scripts.1be9f18d714c98fcf60d.js'), NULL, '1.0', true);
-            wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.1be9f18d714c98fcf60d.css'));
+            wp_enqueue_script('main-university-js', get_theme_file_uri('/bundled-assets/scripts.d4711097e3cf67ed360a.js'), NULL, '1.0', true);
+            wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.d4711097e3cf67ed360a.css'));
         }
         
     }
@@ -96,4 +96,46 @@
     // }
 
     // add_filter('acf/fields/google_map/api', 'f2BlueprintMapApi');
+
+    add_action('admin_init', 'redirectSubsToFrontend');
+
+    function redirectSubsToFrontend(){
+        $currentUser = wp_get_current_user();
+        if(count($currentUser->roles) == 1 AND $currentUser->roles[0] == 'subscriber'){
+            wp_redirect(site_url('/'));
+            exit;
+        }
+    }
+
+    // Hide admin bar for subscriber
+    add_action('admin_init', 'noAdminBarForSubs');
+
+    function noAdminBarForSubs(){
+        $currentUser = wp_get_current_user();
+        if(count($currentUser->roles) == 1 AND $currentUser->roles[0] == 'subscriber'){
+           show_admin_bar(false);
+        }
+    }
+
+    //Customize login screen
+    add_filter('login_headerurl', 'headerUrl');
+
+    function headerUrl() {
+        return esc_url(site_url('/'));
+    }
+
+    //Customize login screen css
+    add_action('login_enqueue_scripts', 'loginCss');
+    function loginCss() {
+        wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
+         wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.d4711097e3cf67ed360a.css'));
+    }
+
+    //Customize login title instead of power by wordpress
+    add_filter('login_headertitle', 'loginTitle');
+
+    function loginTitle() {
+        return get_bloginfo('name');
+    }
+
 

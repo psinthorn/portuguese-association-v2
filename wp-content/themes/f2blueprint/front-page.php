@@ -3,10 +3,14 @@
 <div class="page-banner">
       <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/portuguese-banner-01.png'); ?>);"></div>
       <div class="page-banner__content container t-center c-white">
-        <h1 class="headline headline--large">Welcome!</h1>
-        <h2 class="headline headline--medium">We think you&rsquo;ll like it here.</h2>
-        <h3 class="headline headline--small">Why don&rsquo;t you join us<strong>  to get</strong> you&rsquo;re special from us?</h3>
-        <a href="<?php echo get_post_type_archive_link('program') ?>" class="btn btn--large btn--blue">Become A Member</a>
+        <h2 class="headline headline--medium">BEM-VINDO A PORTUGAL ! WELCOME TO PORTUGAL.</h2>
+        <h3 class="headline headline--small">WANT TO KNOW MORE ABOUT THE MIDDLE EAST MARKETS?</h3>
+        <!-- <h3 class="headline headline--small">Why don&rsquo;t you join us<strong>  to get</strong> you&rsquo;re special from us?</h3> -->
+        <?php 
+          if(!is_user_logged_in()) { ?>
+              <a href="<?php echo esc_url(site_url('/wp-signup.php')) ?>" class="btn btn--large btn--blue">Become A Member</a>
+         <?php  } ?>
+        
       </div>
     </div>
 
