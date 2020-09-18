@@ -32,10 +32,6 @@
 
     function showPostListQuery($args = NULL ) {
     
-    ?>
-        
-          <?php 
-
             $today = date('Ymd');
 
             if (!$args['posttype']) {
@@ -61,7 +57,7 @@
         ?>
 
      
-          <p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link($args['posttype']); ?>" class="btn btn--blue">View All Members</a></p>
+          <p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link($args['posttype']); ?>" class="btn btn--blue">View all <?php echo $args['posttype']?>(s)</a></p>
 
         <?php             
                 wp_reset_postdata();
