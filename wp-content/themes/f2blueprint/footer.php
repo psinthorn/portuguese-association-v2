@@ -23,31 +23,14 @@
               <h3 class="headline headline--small">Explore</h3>
               <nav class="nav-list">
 
-                    <!-- <?php 
+                    <?php 
                         wp_nav_menu(array(
                             'theme_location' => 'footerLinksOne'
                         ));
-                    ?> -->
+                    ?>
 
                 
-                <ul>
-                <li <?php 
-              if (is_page('about-us') or wp_get_post_parent_id(0) == 12) { 
-              echo 'class="current-menu-item"'; }?>>
-              <a href="<?php echo site_url('/about-us'); ?>">About Us</a></li>
-
-               <li <?php if (get_post_type() == 'member') echo 'class="current-menu-item"' ?> ><a href="<?php echo get_post_type_archive_link('member'); ?>">Our Members</a></li>
-
-               <li <?php if (get_post_type() == 'event' OR is_page('past-events')) echo 'class="current-menu-item"' ?>><a href="<?php echo get_post_type_archive_link('event'); ?>">Events</a></li>
-
-              <li <?php 
-              if (get_post_type() == 'post') echo 'class="current-menu-item"' ?>>
-              <a href="<?php echo site_url('/blog'); ?>">Blog</a></li>
-
-               <li <?php 
-              if (is_page('contact') or wp_get_post_parent_id(0) == 108) echo 'class="current-menu-item"' ?>>
-              <a href="<?php echo site_url('/contact'); ?>">Contact</a></li>
-                </ul>
+                
                
               </nav>
             </div>
