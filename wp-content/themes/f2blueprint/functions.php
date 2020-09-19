@@ -88,10 +88,12 @@
     add_action('wp_enqueue_scripts', 'f2_blueprint_files');
 
 
+
     function f2_blueprint_features() {
         register_nav_menu('headerMenuLocation', 'Header Menu Location');
         register_nav_menu('footerLinksOne', 'Footer Location Links One');
         register_nav_menu('footerLinksTwo', 'Footer Location Links Two');
+        register_nav_menu('selectLanguage', 'Fix Select Language Menu');
         add_theme_support('title-tag');
         add_theme_support('post-thumbnails');
         add_image_size('teamworkLandscape', 400, 260, true);

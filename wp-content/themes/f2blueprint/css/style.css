@@ -9,6 +9,7 @@
 @import "./base/utility-classes";
 
 /* BEM Blocks */
+@import "./modules/utilities.css";
 @import "./modules/shame";
 @import "./modules/login";
 @import "./modules/btn";

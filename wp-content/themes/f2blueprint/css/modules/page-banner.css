@@ -1,5 +1,5 @@
 .page-banner {
-  background-color: #0071bb;
+  background-color: #000;
   padding: 80px 0 40px 0;
   position: relative;
   @mixin atSmall {
@@ -24,7 +24,7 @@
 
   &__bg-image {
     /* background-color: #000; */
-    opacity: .6;
+    opacity: .5;
     background-size: cover;
     position: absolute;
     top: 0;
