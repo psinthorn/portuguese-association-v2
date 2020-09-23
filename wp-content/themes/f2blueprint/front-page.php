@@ -54,14 +54,14 @@ homePageBanner();
           if($lang == 'pt'){
           ?>  
            <p class="t-center no-margin"> <a href="<?php echo get_post_type_archive_link('event'); ?>" 
-            class="btn btn--blue" >View portugal</a></p>
+            class="btn btn--blue" >Ver todos eventos</a></p>
        
           <?php 
         } else {
           ?>
           
           <p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link('event'); ?>" 
-          class="btn btn--blue">View All Events</a></p>
+          class="btn btn--blue">View all events</a></p>
        
           <?php
         }
@@ -117,7 +117,24 @@ homePageBanner();
                 wp_reset_postdata();
             ?>
 
-          <p class="t-center no-margin"><a href="<?php echo site_url('/blog'); ?>" class="btn btn--yellow">View All Blog Posts</a></p>
+                 <?php 
+          $lang = pll_current_language();
+          if($lang == 'pt'){
+          ?>  
+           <p class="t-center no-margin"><a href="<?php echo site_url('/blog'); ?>" class="btn btn--yellow">Ver todas entradas blogue</a></p>
+       
+          <?php 
+        } else {
+          ?>
+          
+          <p class="t-center no-margin"><a href="<?php echo site_url('/blog'); ?>" class="btn btn--yellow">View all blog posts</a></p>
+       
+          <?php
+        }
+          ?>
+          
+
+          
 
         </div>
       </div>

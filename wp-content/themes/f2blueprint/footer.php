@@ -20,7 +20,24 @@
 
           <div class="site-footer__col-two-three-group">
             <div class="site-footer__col-two">
-              <h3 class="headline headline--small">Explore</h3>
+
+              <?php 
+                  $lang = pll_current_language();
+                    if($lang == 'pt'){
+                    ?>  
+                    <h3 class="headline headline--small">Explore </h3>
+                
+                    <?php 
+                  } else {
+                    ?>
+                    
+                    <h3 class="headline headline--small">Explore</h3>
+                
+                    <?php
+                  }
+                ?>
+                
+
               <nav class="nav-list">
 
                     <?php 
@@ -36,7 +53,22 @@
             </div>
 
             <div class="site-footer__col-three">
-              <h3 class="headline headline--small">Learn</h3>
+            <?php 
+                  $lang = pll_current_language();
+                    if($lang == 'pt'){
+                    ?>  
+                    <h3 class="headline headline--small">Mais informação </h3>
+                
+                    <?php 
+                  } else {
+                    ?>
+                    
+                    <h3 class="headline headline--small">Informaton</h3>
+                
+                    <?php
+                  }
+                ?>
+              
               <nav class="nav-list">
                    <?php 
                         wp_nav_menu(array(
@@ -56,7 +88,23 @@
           </div>
 
           <div class="site-footer__col-four">
-            <h3 class="headline headline--small">Newsletter Subscribe</h3>
+
+          <?php 
+                  $lang = pll_current_language();
+                    if($lang == 'pt'){
+                    ?>  
+                    <h3 class="headline headline--small">Subscreva a nossa newsletter</h3>
+                
+                    <?php 
+                  } else {
+                    ?>
+                    
+                    <h3 class="headline headline--small">Newsletter Subscribe</h3>
+                
+                    <?php
+                  }
+                ?>
+            
               <!-- Begin Mailchimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
 <style type="text/css">
@@ -71,7 +119,27 @@
 	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" style="width: 98%;" required>
     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9ecb913cccfb0c788197f2d45_8b693b3514" tabindex="-1" value=""></div>
-    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    <div class="clear">
+
+    <?php 
+                  $lang = pll_current_language();
+                    if($lang == 'pt'){
+                    ?>  
+                    <input type="submit" value="Subscreva" name="subscribe" id="mc-embedded-subscribe" class="button">
+                
+                    <?php 
+                  } else {
+                    ?>
+                    
+                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                
+                    <?php
+                  }
+                ?>
+    
+    
+    
+    </div>
     </div>
 </form>
 </div>
