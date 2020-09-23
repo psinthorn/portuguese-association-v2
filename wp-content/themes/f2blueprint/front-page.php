@@ -1,23 +1,29 @@
-<?php get_header(); ?>
-
-<div class="page-banner">
-      <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/portuguese-banner-01.png'); ?>);"></div>
-      <div class="page-banner__content container t-center c-white">
-        <h2 class="headline headline--medium">BEM-VINDO A PORTUGAL ! WELCOME TO PORTUGAL.</h2>
-        <h3 class="headline headline--small">WANT TO KNOW MORE ABOUT THE MIDDLE EAST MARKETS?</h3>
-        <!-- <h3 class="headline headline--small">Why don&rsquo;t you join us<strong>  to get</strong> you&rsquo;re special from us?</h3> -->
-        <?php 
-          if(!is_user_logged_in()) { ?>
-              <a href="<?php echo esc_url(site_url('/wp-signup.php')) ?>" class="btn btn--large btn--blue">Become A Member</a>
-         <?php  } ?>
-        
-      </div>
-    </div>
-
+<?php 
+get_header(); 
+homePageBanner();
+?>
     <div class="full-width-split group">
       <div class="full-width-split__one">
         <div class="full-width-split__inner">
-          <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
+
+      <?php 
+        $lang = pll_current_language();
+          if($lang == 'pt'){
+          ?>  
+           <h2 class="headline headline--small-plus t-center"> Próximos eventos ... Ver todos os eventos </h2>
+       
+          <?php 
+        } else {
+          ?>
+          
+           <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
+       
+          <?php
+        }
+          ?>
+         
+          
+
 
           <?php 
             $today = date('Ymd');
@@ -42,12 +48,45 @@
                 get_template_part('partials/content', 'event');     
             }
         ?>
-          <p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link('event'); ?>" class="btn btn--blue">View All Events</a></p>
+
+        <?php 
+          $lang = pll_current_language();
+          if($lang == 'pt'){
+          ?>  
+           <p class="t-center no-margin"> <a href="<?php echo get_post_type_archive_link('event'); ?>" 
+            class="btn btn--blue" >View portugal</a></p>
+       
+          <?php 
+        } else {
+          ?>
+          
+          <p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link('event'); ?>" 
+          class="btn btn--blue">View All Events</a></p>
+       
+          <?php
+        }
+          ?>
+          
         </div>
       </div>
       <div class="full-width-split__two">
         <div class="full-width-split__inner">
-          <h2 class="headline headline--small-plus t-center">From Our Blogs</h2>
+          <?php 
+        $lang = pll_current_language();
+          if($lang == 'pt'){
+          ?>  
+           <h2 class="headline headline--small-plus t-center"> Do nosso blog ... Ver entradas blog  </h2>
+       
+          <?php 
+        } else {
+          ?>
+          
+           <h2 class="headline headline--small-plus t-center">From Our Blogs</h2>
+       
+          <?php
+        }
+          ?>
+                          
             <?php 
              $twoPostsQuery = new WP_Query(array(
                 'posts_per_page' => 2

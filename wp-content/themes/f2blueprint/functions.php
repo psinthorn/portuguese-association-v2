@@ -18,7 +18,7 @@
         }
     ?>
         <div class="page-banner">
-            <div class="page-banner__bg-image" style="background-image: url(<?php echo $args['photo'] ?>"></div>
+            <div class="page-banner__bg-image" style="background-image: url(<?php echo $args['photo'] ?>)"></div>
             <div class="page-banner__content container container--narrow">
             <h1 class="page-banner__title"><?php echo $args['title']; ?></h1>
             <div class="page-banner__intro">
@@ -26,6 +26,54 @@
             </div>
             </div>  
         </div>
+
+    <?php 
+    }
+
+
+    // Home Page and post banner auto selection 
+    function homePageBanner($args = NULL) {
+        $lang = pll_current_language();
+        if (!$args['title']) {
+            $args['title'] = get_the_title(); 
+        }
+        if (!$args['subtitle']) {
+            $args['subtitle'] = get_field('page_banner_sub_title');
+        }
+
+        if (!$args['photo']) {
+            if (get_field('page_banner_background_image')) {
+                 $args['photo'] = get_field('page_banner_background_image')['sizes']['pageBanner']; 
+            } else {
+                 $args['photo'] = get_theme_file_uri('/images/portuguese-wall.png');
+            }
+           
+        }
+    ?>
+        <div class="page-banner">
+            <div class="page-banner__bg-image" style="background-image: url(<?php echo $args['photo'] ?>)"></div>
+            <div class="page-banner__content container t-center c-white">
+                <h2 class="headline headline--medium"><?php echo $args['title']; ?></h2>
+                <h3 class="headline headline--small"><?php echo $args['subtitle']; ?></h3>
+                <!-- <h3 class="headline headline--small">Why don&rsquo;t you join us<strong>  to get</strong> you&rsquo;re special from us?</h3> -->
+                <?php 
+                if(!is_user_logged_in()) { ?>
+                    <a href="<?php echo esc_url(site_url('/wp-signup.php')) ?>" class="btn btn--large btn--blue">
+                    <?php 
+                    if($lang == 'pt') { 
+                    ?>
+                        Inscreva-se ja !</a>
+                    <?php 
+                    } else {
+                        ?>
+                        Become A Member</a>
+                    <?php
+                    }
+                    ?>
+                <?php  } ?>
+                
+            </div>
+            </div>
 
     <?php 
     }

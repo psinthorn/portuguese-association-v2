@@ -11,14 +11,14 @@
 <body <?php body_class(); ?>>
    <header class="site-header">
       <div class="container">
-        <div class="select-lang">
+        <!-- <div class="select-lang">
           <span class="t-center pl-3 strong">Select Language</span> 
           <?php 
                         wp_nav_menu(array(
                             'theme_location' => 'selectLanguage'
                         ));
           ?>
-        </div>
+        </div> -->
         <h1 class="school-logo-text float-left">
           <a href="<?php echo site_url(); ?>">Portuguese<strong>Association</strong></a>
         </h1>
