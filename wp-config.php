@@ -21,7 +21,7 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 
-if (strstr($_SERVER["SERVER_NAME"], "portugueseasso.local")) {
+
 	define( 'DB_NAME', 'local' );
 
 	/** MySQL database username */
@@ -38,26 +38,6 @@ if (strstr($_SERVER["SERVER_NAME"], "portugueseasso.local")) {
 
 	/** The Database Collate type. Don't change this if in doubt. */
 	define( 'DB_COLLATE', '' );
-
-} else {
-	define( 'DB_NAME', 'portug67_wp386' );
-
-	/** MySQL database username */
-	define( 'DB_USER', 'portug67_portug67' );
-
-	/** MySQL database password */
-	define( 'DB_PASSWORD', '+QpNQs@mEcoz' );
-
-	/** MySQL hostname */
-	define( 'DB_HOST', 'localhost' );
-
-	/** Database Charset to use in creating database tables. */
-	define( 'DB_CHARSET', 'utf8' );
-
-	/** The Database Collate type. Don't change this if in doubt. */
-	define( 'DB_COLLATE', '' );
-
-}
 
 
 /**
@@ -85,7 +65,6 @@ define('NONCE_SALT',       'Ew4XfEDZ7yZ/1/Ajx34ItL/6ZBmN0sLE3R3KvPfXlhjbw0LrZBXU
  * a unique prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix = 'wp_';
-
 
 
 
