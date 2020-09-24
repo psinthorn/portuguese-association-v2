@@ -1,4 +1,21 @@
 <?php 
+
+ // Langauge checking 
+    function languageCheck() {
+        // Check function is exist then
+        // Check lang
+
+        if(function_exists('pll_current_language')){
+             $lang = pll_current_language();
+             return $lang;
+          } else {
+             $lang = 'en';
+             return $lang;
+          }
+    } 
+
+    
+    
 // Page and post banner auto selection 
     function pageBanner($args = NULL) {
         if (!$args['title']) {
@@ -33,11 +50,8 @@
 
     // Home Page and post banner auto selection 
     function homePageBanner($args = NULL) {
-        if(function_exists('pll_current_language')){
-             $lang = pll_current_language();
-          } else {
-                    $lang = 'en';
-          }
+       
+        $lang = languageCheck();
        
         if (!$args['title']) {
             $args['title'] = get_the_title(); 
@@ -83,16 +97,13 @@
     <?php 
     }
 
+    
     function showPostListQuery($args = NULL ) {
-             if(function_exists('pll_current_language')){
-                    $lang = pll_current_language();
-                } else {
-                            $lang = 'en';
-                }
+        
+        //$lang = languageCheck();
+        $lang = 'pt';
 
         $today = date('Ymd');
-
-
 
             if (!$args['posttype']) {
                 $args['posttype'] = 'blog';
@@ -118,17 +129,17 @@
 
           <p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link($args['posttype']);?>" class="btn btn--blue">
           
-            <?php if($lang = 'pt') {  
-                if($args['posttype'] = 'partner') {
+            <?php if($lang == 'pt') {  
+                if($args['posttype'] == 'partner') {
                     $args['posttype'] = 'parceiros';
                 } else {
                     $args['posttype'] = 'socios';
                 }
-                ?>
+            ?>    
+                Os nossos <?php echo $args['posttype']?></a></p>
                 
-                Os nossos <?php echo $args['posttype']?>(s)</a></p>
             <?php  } else { ?>
-                View all <?php echo $args['posttype']?>(s)</a></p>
+                View all <?php echo $args['posttype']?></a></p>
             <?php  } ?>
             
 
@@ -253,25 +264,13 @@
     }
 
 
-    // Langauge checking 
-    function languageCheck() {
-        // Check function is exist then
-        // Check lang
-
-        if(function_exists('pll_current_language')){
-             $lang = pll_current_language();
-             return $lang;
-          } else {
-             $lang = 'en';
-             return $lang;
-          }
-    }
+   
 
     //Translate to Portugal
     function translateENOrPT($args = NULL) {
 
-        $lang = languageCheck();
-        //$lang = 'pt';
+        //$lang = languageCheck();
+        $lang = 'pt';
     
         $dictionaryEnToPt = array(
                 'Our Members' => 'Os nossos socios',
