@@ -4,7 +4,9 @@
     <div class="full-width-split group">
     <div class="full-width-split__one">
         <div class="full-width-split__inner">
-          <h2 class="headline headline--small-plus t-center"><?php echo translateENOrPT(array('word'=>'Our Members')) ?></h2>  
+          <h2 class="headline headline--small-plus t-center">
+          <?php echo translateENOrPT(array('word'=>'Our Members')) ?>
+          </h2>  
             <?php  showPostListQuery(array('posttype'=>'member', 'perpage'=>'4')); ?>
     </div>
     </div>
@@ -13,7 +15,9 @@
         <div class="full-width-split__inner">
            <div class="full-width-split__inner">
          
-            <h2 class="headline headline--small-plus t-center"><?php echo translateENOrPT(array('word'=>'Our Partners')) ?></h2>
+            <h2 class="headline headline--small-plus t-center">
+            <?php echo translateENOrPT(array('word'=>'Our Partners')) ?>
+            </h2>
 
             <?php  showPostListQuery(array('posttype'=>'partner', 'perpage'=>'4')); ?>
 
