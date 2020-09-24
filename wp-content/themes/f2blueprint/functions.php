@@ -33,7 +33,12 @@
 
     // Home Page and post banner auto selection 
     function homePageBanner($args = NULL) {
-        $lang = pll_current_language();
+        if(function_exists('pll_current_language')){
+             $lang = pll_current_language();
+          } else {
+                    $lang = 'en';
+          }
+       
         if (!$args['title']) {
             $args['title'] = get_the_title(); 
         }

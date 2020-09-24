@@ -1,10 +1,23 @@
 <?php get_header(); 
     pageBanner();
+
+    if(function_exists('pll_current_language')){
+             $lang = pll_current_language();
+          } else {
+             $lang = 'en';
+    }
+    
+?>
+
+<?php 
+// $lang = 'pt';
+if($lang == 'en') {
 ?>
 
     <div class="full-width-split group">
     <div class="full-width-split__one">
         <div class="full-width-split__inner">
+
           <h2 class="headline headline--small-plus t-center">Our Members</h2>     
             <?php  showPostListQuery(array('posttype'=>'member', 'perpage'=>'4')); ?>
     </div>
@@ -13,7 +26,22 @@
       <div class="full-width-split__two">
         <div class="full-width-split__inner">
            <div class="full-width-split__inner">
-          <h2 class="headline headline--small-plus t-center">Our Partners</h2>
+
+           <?php 
+           if ($lang == 'pt') {
+             ?>
+
+            <h2 class="headline headline--small-plus t-center">Portugal</h2>
+            <?php
+           } else {
+             ?>
+            <h2 class="headline headline--small-plus t-center">Our Partners</h2>
+
+            <?php
+           }
+
+           ?>
+          
 
             <?php  showPostListQuery(array('posttype'=>'partner', 'perpage'=>'4')); ?>
                 </div>
@@ -79,5 +107,8 @@ you. </p>
         <div class="slider__bullets glide__bullets hide" data-glide-el="controls[nav]"></div>
       </div>
     </div>
+     <?php 
+}       
+    ?>
 
 <?php get_footer(); ?>

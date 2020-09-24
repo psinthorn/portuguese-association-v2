@@ -22,7 +22,11 @@
             <div class="site-footer__col-two">
 
               <?php 
-                  $lang = pll_current_language();
+                      if(function_exists('pll_current_language')){
+             $lang = pll_current_language();
+          } else {
+                    $lang = 'en';
+          }
                     if($lang == 'pt'){
                     ?>  
                     <h3 class="headline headline--small">Explore </h3>
@@ -36,7 +40,7 @@
                     <?php
                   }
                 ?>
-                
+
 
               <nav class="nav-list">
 
@@ -54,7 +58,11 @@
 
             <div class="site-footer__col-three">
             <?php 
-                  $lang = pll_current_language();
+                      if(function_exists('pll_current_language')){
+             $lang = pll_current_language();
+          } else {
+                    $lang = 'en';
+          }
                     if($lang == 'pt'){
                     ?>  
                     <h3 class="headline headline--small">Mais informação </h3>
@@ -90,7 +98,9 @@
           <div class="site-footer__col-four">
 
           <?php 
-                  $lang = pll_current_language();
+                  if(function_exists('pll_current_language')){
+             $lang = pll_current_language();
+        }
                     if($lang == 'pt'){
                     ?>  
                     <h3 class="headline headline--small">Subscreva a nossa newsletter</h3>
@@ -122,7 +132,11 @@
     <div class="clear">
 
     <?php 
-                  $lang = pll_current_language();
+                 if(function_exists('pll_current_language')){
+             $lang = pll_current_language();
+          } else {
+                    $lang = 'en';
+          }
                     if($lang == 'pt'){
                     ?>  
                     <input type="submit" value="Subscreva" name="subscribe" id="mc-embedded-subscribe" class="button">

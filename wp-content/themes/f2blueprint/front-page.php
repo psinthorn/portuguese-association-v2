@@ -7,7 +7,13 @@ homePageBanner();
         <div class="full-width-split__inner">
 
       <?php 
-        $lang = pll_current_language();
+
+           if(function_exists('pll_current_language')){
+             $lang = pll_current_language();
+          } else {
+                    $lang = 'en';
+          }
+       
           if($lang == 'pt'){
           ?>  
            <h2 class="headline headline--small-plus t-center"> Próximos eventos ... Ver todos os eventos </h2>
@@ -50,7 +56,11 @@ homePageBanner();
         ?>
 
         <?php 
-          $lang = pll_current_language();
+              if(function_exists('pll_current_language')){
+             $lang = pll_current_language();
+          } else {
+                    $lang = 'en';
+          }
           if($lang == 'pt'){
           ?>  
            <p class="t-center no-margin"> <a href="<?php echo get_post_type_archive_link('event'); ?>" 
@@ -72,10 +82,14 @@ homePageBanner();
       <div class="full-width-split__two">
         <div class="full-width-split__inner">
           <?php 
-        $lang = pll_current_language();
+             if(function_exists('pll_current_language')){
+             $lang = pll_current_language();
+          } else {
+                    $lang = 'en';
+          }
           if($lang == 'pt'){
           ?>  
-           <h2 class="headline headline--small-plus t-center"> Do nosso blog ... Ver entradas blog  </h2>
+           <h2 class="headline headline--small-plus t-center"> do nosso blogue ... ver entradas blogue  </h2>
        
           <?php 
         } else {
@@ -118,7 +132,11 @@ homePageBanner();
             ?>
 
                  <?php 
-          $lang = pll_current_language();
+               if(function_exists('pll_current_language')){
+             $lang = pll_current_language();
+          } else {
+                    $lang = 'en';
+          }
           if($lang == 'pt'){
           ?>  
            <p class="t-center no-margin"><a href="<?php echo site_url('/blog'); ?>" class="btn btn--yellow">Ver todas entradas blogue</a></p>
@@ -132,9 +150,7 @@ homePageBanner();
           <?php
         }
           ?>
-          
-
-          
+              
 
         </div>
       </div>
@@ -160,38 +176,6 @@ homePageBanner();
                 get_template_part('partials/content', 'spotlight');     
             }
         ?>
-
-          <!-- <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/portugal-slide-03.png'); ?>">
-            <div class="hero-slider__interior container">
-              <div class="hero-slider__overlay">
-                <h2 class="headline headline--medium t-center">GASTRONOMY OF PORTUGAL</h2>
-                <p class="t-center">World class culinary and award winning wine</p>
-                <p class="t-center no-margin"><a href="http://portugueseasso.local/gastronomy-of-portugal/" class="btn btn--blue">Learn more</a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/portugal-slide-02.png'); ?>">
-            <div class="hero-slider__interior container">
-              <div class="hero-slider__overlay">
-                <h2 class="headline headline--medium t-center">PORTUGAL FOR FAMILIES</h2>
-                <p class="t-center">The perfect destination for the entire family</p>
-                <p class="t-center no-margin"><a href="http://portugueseasso.local/slides/portugal-for-families/" class="btn btn--blue">Learn more</a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/portugal-slide-01.png'); ?>">
-            <div class="hero-slider__interior container">
-              <div class="hero-slider__overlay">
-                <h2 class="headline headline--medium t-center">PORTUGAL HIGHLIGHTS</h2>
-                <p class="t-center">Wellness trips, shopping tours or honeymooners, we will definitely find the perfect tour for
-you. </p>
-                <p class="t-center no-margin"><a href="http://portugueseasso.local/slides/portugal-highlights/" class="btn btn--blue">Learn more</a></p>
-              </div>
-            </div>
-          </div> -->
-
 
         </div>
         <div class="slider__bullets glide__bullets hide" data-glide-el="controls[nav]"></div>
