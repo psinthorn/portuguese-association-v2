@@ -1,36 +1,14 @@
 <?php 
 get_header(); 
 homePageBanner();
+//$lang = languageCheck();
 ?>
     <div class="full-width-split group">
       <div class="full-width-split__one">
         <div class="full-width-split__inner">
-
-      <?php 
-
-           if(function_exists('pll_current_language')){
-             $lang = pll_current_language();
-          } else {
-                    $lang = 'en';
-          }
-       
-          if($lang == 'pt'){
-          ?>  
-           <h2 class="headline headline--small-plus t-center"> Próximos eventos ... Ver todos os eventos </h2>
-       
-          <?php 
-        } else {
-          ?>
-          
-           <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
-       
-          <?php
-        }
-          ?>
-         
-          
-
-
+           <h2 class="headline headline--small-plus t-center"> 
+           <?php echo translateENOrPT(array('word'=>'Upcoming Events')) ?> 
+           </h2>
           <?php 
             $today = date('Ymd');
             $listTwoEventsQuery = new WP_Query(array(
@@ -53,61 +31,29 @@ homePageBanner();
                 $listTwoEventsQuery->the_post(); 
                 get_template_part('partials/content', 'event');     
             }
-        ?>
-
-        <?php 
-              if(function_exists('pll_current_language')){
-             $lang = pll_current_language();
-          } else {
-                    $lang = 'en';
-          }
-          if($lang == 'pt'){
-          ?>  
-           <p class="t-center no-margin"> <a href="<?php echo get_post_type_archive_link('event'); ?>" 
-            class="btn btn--blue" >Ver todos eventos</a></p>
-       
-          <?php 
-        } else {
-          ?>
-          
+        ?> 
+                   
           <p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link('event'); ?>" 
-          class="btn btn--blue">View all events</a></p>
-       
-          <?php
-        }
-          ?>
+          class="btn btn--blue"><?php echo translateENOrPT(array('word'=>'View all events')) ?></a></p>      
           
         </div>
       </div>
       <div class="full-width-split__two">
         <div class="full-width-split__inner">
-          <?php 
-             if(function_exists('pll_current_language')){
-             $lang = pll_current_language();
-          } else {
-                    $lang = 'en';
-          }
-          if($lang == 'pt'){
-          ?>  
-           <h2 class="headline headline--small-plus t-center"> do nosso blogue ... ver entradas blogue  </h2>
-       
-          <?php 
-        } else {
-          ?>
           
-           <h2 class="headline headline--small-plus t-center">From Our Blogs</h2>
-       
-          <?php
-        }
-          ?>
-                          
-            <?php 
+           <h2 class="headline headline--small-plus t-center">
+           <?php echo translateENOrPT(array('word'=>'From Our Blogs')) ?>
+           </h2>      
+          
+           <?php 
              $twoPostsQuery = new WP_Query(array(
                 'posts_per_page' => 2
             ));
+
             while ($twoPostsQuery->have_posts()) {
                     $twoPostsQuery->the_post()  
              ?>
+
               <div class="event-summary">
                 <a class="event-summary__date event-summary__date--beige t-center" href="<?php the_permalink(); ?>">
                 <span class="event-summary__month"><?php the_time('M'); ?></span>
@@ -121,7 +67,7 @@ homePageBanner();
                     echo wp_trim_words(get_the_content(), 18);
                 } 
                 ?>
-                    <a href="<?php the_permalink(); ?>" class="nu gray">Read more</a></p>
+                    <a href="<?php the_permalink(); ?>" class="nu gray"><?php echo translateENOrPT(array('word'=>'Read more')) ?></a></p>
                 </div>
             </div>
 
@@ -131,25 +77,13 @@ homePageBanner();
                 wp_reset_postdata();
             ?>
 
-                 <?php 
-               if(function_exists('pll_current_language')){
-             $lang = pll_current_language();
-          } else {
-                    $lang = 'en';
-          }
-          if($lang == 'pt'){
-          ?>  
-           <p class="t-center no-margin"><a href="<?php echo site_url('/blog'); ?>" class="btn btn--yellow">Ver todas entradas blogue</a></p>
+                 
+         
+          <p class="t-center no-margin"><a href="<?php echo site_url('/blog'); ?>" class="btn btn--yellow">
+          <?php echo translateENOrPT(array('word'=>'View all blog posts')) ?>
+          </a></p>
        
-          <?php 
-        } else {
-          ?>
-          
-          <p class="t-center no-margin"><a href="<?php echo site_url('/blog'); ?>" class="btn btn--yellow">View all blog posts</a></p>
-       
-          <?php
-        }
-          ?>
+      
               
 
         </div>

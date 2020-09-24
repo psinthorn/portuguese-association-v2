@@ -1,7 +1,7 @@
     <div class="full-width-split group">
       <div class="full-width-split__one">
         <div class="full-width-split__inner">
-          <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
+          <h2 class="headline headline--small-plus t-center"><?php echo translateENOrPT(array('word'=>'Upcoming Events')) ?></h2>
 
           <?php 
             $today = date('Ymd');
@@ -18,12 +18,12 @@
         ?>
 
 
-          <p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link('event'); ?>" class="btn btn--blue">View All Events</a></p>
+          <p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link('event'); ?>" class="btn btn--blue"><?php echo translateENOrPT(array('word'=>'View All Events')) ?></a></p>
         </div>
       </div>
       <div class="full-width-split__two">
         <div class="full-width-split__inner">
-          <h2 class="headline headline--small-plus t-center">From Our Blogs</h2>
+          <h2 class="headline headline--small-plus t-center"><?php echo translateENOrPT(array('word'=>'From Our Blogs')) ?></h2>
             <?php 
             $today = date('Ymd');
             $listTwoMembersQuery = new WP_Query(array(
@@ -37,7 +37,7 @@
                 get_template_part('partials/content', 'member');     
             }
           ?>
-                    <a href="<?php the_permalink(); ?>" class="nu gray">Read more</a></p>
+                    <a href="<?php the_permalink(); ?>" class="nu gray"><?php echo translateENOrPT(array('word'=>'Read more')) ?></a></p>
                 </div>
             </div>
 
@@ -47,7 +47,8 @@
                 wp_reset_postdata();
             ?>
 
-          <p class="t-center no-margin"><a href="<?php echo site_url('/blog'); ?>" class="btn btn--yellow">View All Blog Posts</a></p>
+          <p class="t-center no-margin"><a href="<?php echo site_url('/blog'); ?>" class="btn btn--yellow">
+          <?php echo translateENOrPT(array('word'=>'View all partners')) ?></a></p>
 
         </div>
       </div>

@@ -84,8 +84,15 @@
     }
 
     function showPostListQuery($args = NULL ) {
-    
-            $today = date('Ymd');
+             if(function_exists('pll_current_language')){
+                    $lang = pll_current_language();
+                } else {
+                            $lang = 'en';
+                }
+
+        $today = date('Ymd');
+
+
 
             if (!$args['posttype']) {
                 $args['posttype'] = 'blog';
@@ -109,12 +116,25 @@
            
         ?>
 
-     
-          <p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link($args['posttype']); ?>" class="btn btn--blue">View all <?php echo $args['posttype']?>(s)</a></p>
+          <p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link($args['posttype']);?>" class="btn btn--blue">
+          
+            <?php if($lang = 'pt') {  
+                if($args['posttype'] = 'partner') {
+                    $args['posttype'] = 'parceiros';
+                } else {
+                    $args['posttype'] = 'socios';
+                }
+                ?>
+                
+                Os nossos <?php echo $args['posttype']?>(s)</a></p>
+            <?php  } else { ?>
+                View all <?php echo $args['posttype']?>(s)</a></p>
+            <?php  } ?>
+            
 
-        <?php             
-                wp_reset_postdata();
-        ?>
+            <?php             
+                    wp_reset_postdata();
+            ?>
       
 
     
@@ -230,6 +250,58 @@
 
     function loginTitle() {
         return get_bloginfo('name');
+    }
+
+
+    // Langauge checking 
+    function languageCheck() {
+        // Check function is exist then
+        // Check lang
+
+        if(function_exists('pll_current_language')){
+             $lang = pll_current_language();
+             return $lang;
+          } else {
+             $lang = 'en';
+             return $lang;
+          }
+    }
+
+    //Translate to Portugal
+    function translateENOrPT($args = NULL) {
+
+        //$lang = languageCheck();
+        $lang = 'pt';
+    
+        $dictionaryEnToPt = array(
+                'Our Members' => 'Os nossos socios',
+                'Our Partners' => 'Os nossos parceiros',
+                'View all members' => 'Ver todos socios',
+                'View all partners' => 'Ver todos parceiros',
+                'View all blog posts' => 'Ver todas entradas blogue',
+                'View all events' => 'Ver todos eventos',
+                'Read more' => 'Leia mais',
+                'Learn more' => 'Saiba mais',
+                'Become a Member' => 'Inscreva-se ja !', 
+                'Upcoming Events' => 'Próximos eventos ... Ver todos os eventos', 
+                'From Our Blogs' => 'Do nosso blogue ... Ver entradas blogue', 
+                'Explore' => 'Explore', 
+                'Information' => 'Mais informação', 
+                'Newsletter Subscribe' => 'Subscreva a nossa newsletter', 
+                'Subscribe' => 'Subscreva',
+            );
+
+        // Always true as if found key value then return Portugal word 
+        // If not found then retuen English
+        if($lang == 'pt') {
+            if($dictionaryEnToPt[$args['word']]){
+                    return $dictionaryEnToPt[$args['word']];
+                } else {
+                    return $args['word'];
+                }
+        } else {
+            return $args['word'];
+        }
     }
 
 
