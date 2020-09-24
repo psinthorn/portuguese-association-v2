@@ -270,7 +270,7 @@
     //Translate to Portugal
     function translateENOrPT($args = NULL) {
 
-        //$lang = languageCheck();
+        $lang = languageCheck();
         //$lang = 'pt';
     
         $dictionaryEnToPt = array(
