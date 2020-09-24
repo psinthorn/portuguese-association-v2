@@ -271,7 +271,7 @@
     function translateENOrPT($args = NULL) {
 
         //$lang = languageCheck();
-        $lang = 'pt';
+        //$lang = 'pt';
     
         $dictionaryEnToPt = array(
                 'Our Members' => 'Os nossos socios',
