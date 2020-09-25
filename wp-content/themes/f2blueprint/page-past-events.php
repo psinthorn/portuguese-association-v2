@@ -3,8 +3,8 @@ get_header();
 pageBanner();
 ?>
 
-
 <div class="container container--narrow page-section">
+
     <?php 
         $today = date('Ymd');
             $pastEventsQuery = new WP_Query(array(
@@ -24,19 +24,32 @@ pageBanner();
                 )
             ));
 
-        while ($pastEventsQuery->have_posts()) {
+        
+        if(!$pastEventsQuery->have_posts()) {  
+        
+        ?>
+            <h2 class="t-center">
+            <?php echo translateENOrPT(array('word' => 'Sorry, No any past events post here. (lang: pt)')) ?>
+            </h2>
+        
+        <?php } else { 
+
+             while ($pastEventsQuery->have_posts()) {
             $pastEventsQuery->the_post();
             get_template_part('partials/content', 'event'); 
-        }
+            }
 
-        echo paginate_links(array(
-            'total' => $pastEventsQuery->max_num_pages
-        ));
-    ?>
+            echo paginate_links(array(
+                'total' => $pastEventsQuery->max_num_pages
+            ));
+            }      
+        ?>
 
-    <hr class="section-break" />
-    <p><a href="<?php echo site_url('/events'); ?>"><?php echo translateENOrPT(array('word'=>'All future popular events. Click here')) ?></a> </p>  
+    <!-- <hr class="section-break" /> -->
+    <p class="mt-5"><a href="<?php echo site_url('/events'); ?>"><?php echo translateENOrPT(array('word'=>'All future popular events. Click here')) ?></a> </p>  
 </div>
+
+
 
 
 <?php get_footer(); ?>
