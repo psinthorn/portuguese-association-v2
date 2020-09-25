@@ -29,7 +29,7 @@ pageBanner();
         
         ?>
             <h2 class="t-center">
-            <?php echo translateENOrPT(array('word' => 'Sorry, No any past events post here. (lang: pt)')) ?>
+            <?php echo translateENOrPT(array('word' => 'Sorry, No any past events or translate post here.')) ?>
             </h2>
         
         <?php } else { 

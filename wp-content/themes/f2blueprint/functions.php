@@ -291,7 +291,7 @@
                 'Looking for our past events recap all past events here' => 'Veja aqui os nossos últimos eventos. 
 Todos os últimos eventos',
 'All future popular events. Click here' => 'Os nossos próximos eventos. Veja aqui',
-'Sorry, No any list to show or translate here' => 'Sem listas para mostrar ou traduzir aqui'
+'Sorry, No any past events or translate post here.' => 'Sem listas para mostrar ou traduzir aqui'
             );
 
         // Always true as if found key value then return Portugal word 
