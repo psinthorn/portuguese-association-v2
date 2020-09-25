@@ -269,8 +269,8 @@
     //Translate to Portugal
     function translateENOrPT($args = NULL) {
 
-        $lang = languageCheck();
-        //$lang = 'pt';
+        //$lang = languageCheck();
+        $lang = 'pt';
     
         $dictionaryEnToPt = array(
                 'Our Members' => 'Os nossos socios',
@@ -288,6 +288,9 @@
                 'Information' => 'Mais informação', 
                 'Newsletter Subscribe' => 'Subscreva a nossa newsletter', 
                 'Subscribe' => 'Subscreva',
+                'Looking for our past events recap all past events here' => 'Veja aqui os nossos últimos eventos. 
+Todos os últimos eventos',
+'All future popular events. Click here' => 'Os nossos próximos eventos. Veja aqui',
             );
 
         // Always true as if found key value then return Portugal word 

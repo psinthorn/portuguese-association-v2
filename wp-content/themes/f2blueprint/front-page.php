@@ -70,15 +70,12 @@ homePageBanner();
                     <a href="<?php the_permalink(); ?>" class="nu gray"><?php echo translateENOrPT(array('word'=>'Read more')) ?></a></p>
                 </div>
             </div>
-
              
             <?php      
                 }
                 wp_reset_postdata();
             ?>
-
-                 
-         
+        
           <p class="t-center no-margin"><a href="<?php echo site_url('/blog'); ?>" class="btn btn--yellow">
           <?php echo translateENOrPT(array('word'=>'View all blog posts')) ?>
           </a></p>
