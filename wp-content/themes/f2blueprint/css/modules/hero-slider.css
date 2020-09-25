@@ -21,12 +21,13 @@
   }
 
   &__overlay {
+    display: block;
     margin: 0 auto;
     background-color: rgba(0, 0, 0, .68);
     padding: 40px;
     color: #FFF;
     @mixin atMedium {
-      width: 50%;
+      width: 60%;
     }
   }
 
