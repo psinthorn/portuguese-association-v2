@@ -1,6 +1,6 @@
 <?php 
 get_header(); 
-pageBanner(array('title'=>'All past event(s)', 'subtitle'=>'Recap of our past events around the world.'));
+pageBanner();
 ?>
 
 
@@ -35,7 +35,7 @@ pageBanner(array('title'=>'All past event(s)', 'subtitle'=>'Recap of our past ev
     ?>
 
     <hr class="section-break" />
-    <p>All future popular events. <a href="<?php echo site_url('/events'); ?>">Click here.</a> </p>  
+    <p><a href="<?php echo site_url('/events'); ?>"><?php echo translateENOrPT(array('word'=>'All future popular events. Click here')) ?></a> </p>  
 </div>
 
 

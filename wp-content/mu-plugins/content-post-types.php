@@ -110,6 +110,25 @@
             ),
             'menu_icon' => 'dashicons-megaphone'
         ));
+    
+
+    // Slide post type
+        register_post_type('slide', array(
+            'show_in_rest' => true,
+            'supports' => array('title', 'editor','thumbnail'),
+            'rewrite' => array('slug' => 'slide'),
+            'has_archive' => true,
+            'public' => true,
+            'labels' => array(
+                'name' => 'Slide',
+                'add_new_item' => 'Add New Slide',
+                'edit_item' => 'Edit Slide',
+                'all_items' => 'All Slides',
+                'singular_name' => 'slide'
+
+            ),
+            'menu_icon' => 'dashicons-images-alt'
+        ));
     }
 
     add_action('init', 'content_post_types'); 

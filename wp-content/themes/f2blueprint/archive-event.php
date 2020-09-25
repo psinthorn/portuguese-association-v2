@@ -1,6 +1,6 @@
 <?php 
 get_header(); 
-pageBanner(array('title'=>'All Events', 'subtitle'=>"Upcomming Event(s)"));
+pageBanner();
 ?>
 
  
@@ -16,7 +16,7 @@ pageBanner(array('title'=>'All Events', 'subtitle'=>"Upcomming Event(s)"));
     ?>
 
     <hr class="section-break" />
-    <p>Looking for our past events. <a href="<?php echo site_url('past-events'); ?>">recap all past events here.</a> </p>   
+    <p><a href="<?php echo site_url('past-events'); ?>"><?php echo translateENOrPT(array('word'=>'Looking for our past events recap all past events here')) ?></a> </p>   
 </div>
 
 
